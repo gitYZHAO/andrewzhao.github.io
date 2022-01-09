@@ -356,7 +356,7 @@ mInitialApplication在进程启动后，attach到ams后才被初始化，整个�
         } catch (ClassNotFoundException e) {
             // This is not necessarily an error, as some packages do not ship with resources
             // (or they do not need rewriting).
-            Log.i(TAG, "No resource references to update in package " + packageName);//
+            Log.i(TAG, "No resource references to update in package " + packageName);//注意到此处LOG的打印时间点
             return;
         }
 	...
@@ -368,7 +368,7 @@ mInitialApplication在进程启动后，attach到ams后才被初始化，整个�
 16:27:55.568500  5269  5269 I LoadedApk: No resource references to update in package ...
 ```
 
-### 2.2 updateHttpProxy()
+### updateHttpProxy()
 一个Binder接口，提供其他进程调用
 ```
 oneway interface IApplicationThread {
